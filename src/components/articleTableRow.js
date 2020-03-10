@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -17,20 +17,20 @@ export default class ArticleTableRow extends Component {
                 console.log('Deleted!')
             }).catch((error) => {
                 console.log(error)
-        })
+            })
         this.forceUpdate();
     }
 
-    render(){
+    render() {
         return (<tr>
             <td>{this.props.obj.title}</td>
             <td>{this.props.obj.author}</td>
             <td>{this.props.obj.content}</td>
             <td>
                 <Link className="edit-link" to={"/edit-article/" + this.props.obj._id}>
-                    Edit
+                    Edytuj
                 </Link>
-                <Button onClick={this.deleteArticle} size="sm" variant="danger">Delete</Button>
+                <Button onClick={this.deleteArticle} size="sm" variant="danger">Usuń</Button>
             </td>
         </tr>)
     }

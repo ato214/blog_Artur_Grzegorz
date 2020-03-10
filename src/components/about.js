@@ -3,7 +3,8 @@ import axios from 'axios'
 import Table from 'react-bootstrap/Table'
 import ArticleTableRow from './articleTableRow'
 
-export default class ArticleList extends Component {
+
+export default class About extends Component {
 
     constructor(props) {
         super(props);
@@ -36,10 +37,9 @@ export default class ArticleList extends Component {
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>Tytuł</th>
-                            <th>Autor</th>
-                            <th>Opis</th>
-                            <th>Funkcje</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Content</th>
                         </tr>
                     </thead>
                     <tbody>

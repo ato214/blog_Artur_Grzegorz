@@ -11,6 +11,9 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import CreateArticle from "./components/create-article.component";
 import EditArticle from "./components/edit-article.component";
 import ArticleList from "./components/article-list.component";
+import About from "./components/about";
+import Welcome from "./components/welcome";
+
 
 function App() {
   return (<Router>
@@ -20,21 +23,30 @@ function App() {
           <Container>
 
             <Navbar.Brand>
-              <Link to={"/create-article"} className="nav-link">
+              <Link to={"/"} className="nav-link">
                 Czytać warto! Blog o książkach i nie tylko...
               </Link>
             </Navbar.Brand>
 
             <Nav className="justify-content-end">
               <Nav>
-                <Link to={"/create-article"} className="nav-link">
-                  Create Article
+                <Link to={"/"} className="nav-link">
+                  Witaj!
                 </Link>
               </Nav>
-
+              <Nav>
+                <Link to={"/about"} className="nav-link">
+                  O mnie
+                </Link>
+              </Nav>
+              <Nav>
+                <Link to={"/create-article"} className="nav-link">
+                  Dodaj artykuł
+                </Link>
+              </Nav>
               <Nav>
                 <Link to={"/article-list"} className="nav-link">
-                  Article list
+                  Lista artykułów
                 </Link>
               </Nav>
             </Nav>
@@ -48,7 +60,8 @@ function App() {
           <Col md={12}>
             <div className="wrapper">
               <Switch>
-                <Route exact path='/' component={CreateArticle} />
+                <Route exact path='/' component={Welcome} />
+                <Route path='/about' component={About} />
                 <Route path="/create-article" component={CreateArticle} />
                 <Route path="/edit-article/:id" component={EditArticle} />
                 <Route path="/article-list" component={ArticleList} />
