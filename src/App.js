@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import CreateArticle from "./components/create-article.component";
 import EditArticle from "./components/edit-article.component";
 import ArticleList from "./components/article-list.component";
@@ -21,7 +21,7 @@ function App() {
 
             <Navbar.Brand>
               <Link to={"/create-article"} className="nav-link">
-                React MERN Stack App
+                Czytać warto! Blog o książkach i nie tylko...
               </Link>
             </Navbar.Brand>
 
