@@ -5,10 +5,10 @@ const port = 3000
 const cookieParser = require('cookie-parser')
 const expressSess = require('express-session')
 app.use(cookieParser())
-app.use(expressSess({secret: "Id of session"}));
+app.use(expressSess({ secret: "Id of session" }));
 
-app.get('/', function(req, res){
-    if(req.session.visits){
+app.get('/', function (req, res) {
+    if (req.session.visits) {
         req.session.visits++;
         res.send("Wizyta nr " + req.session.visits);
     } else {
@@ -28,7 +28,7 @@ app.get('/test/:id',
 
         var cookieVal = req.cookies.id === undefined ? 'brak' : req.cookies.id;
 
-        res.cookie("id", req.params.id, {expire: 360000 + Date.now()})
+        res.cookie("id", req.params.id, { expire: 360000 + Date.now() })
             .send(`Poprzedni parametr: ${cookieVal}, bieżący parametr: ${req.params.id}`)
     }
 )
@@ -48,7 +48,7 @@ app.get('*',
     }
 )
 
-    app.listen(port,
+app.listen(port,
     () => console.log(`Example app listening on port ${port}!`))
 
 

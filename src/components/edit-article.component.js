@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
@@ -21,15 +21,15 @@ export default class EditArticle extends Component {
     }
 
     onChangeArticleTitle(e) {
-        this.setState({title: e.target.value})
+        this.setState({ title: e.target.value })
     }
 
     onChangeArticleAuthor(e) {
-        this.setState({author: e.target.value})
+        this.setState({ author: e.target.value })
     }
 
     onChangeArticleContent(e) {
-        this.setState({content: e.target.value})
+        this.setState({ content: e.target.value })
     }
 
     componentDidMount() {
@@ -61,8 +61,8 @@ export default class EditArticle extends Component {
                 console.log(res.data)
                 console.log('Updated!')
             }).catch(error => {
-            console.log(error)
-        });
+                console.log(error)
+            });
 
         this.props.history.push('/article-list')
     }
@@ -72,22 +72,22 @@ export default class EditArticle extends Component {
         return (<div className="form-wrapper">
             <Form onSubmit={this.onSubmit}>
                 <Form.Group controlId="Title">
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" value={this.state.title} onChange={this.onChangeArticleTitle}/>
+                    <Form.Label>Tytuł</Form.Label>
+                    <Form.Control type="text" value={this.state.title} onChange={this.onChangeArticleTitle} />
                 </Form.Group>
 
                 <Form.Group controlId="Author">
-                    <Form.Label>Author</Form.Label>
-                    <Form.Control type="text" value={this.state.author} onChange={this.onChangeArticleAuthor}/>
+                    <Form.Label>Autor</Form.Label>
+                    <Form.Control type="text" value={this.state.author} onChange={this.onChangeArticleAuthor} />
                 </Form.Group>
 
                 <Form.Group controlId="Content">
-                    <Form.Label>Content</Form.Label>
-                    <Form.Control type="text" value={this.state.content} onChange={this.onChangeArticleContent}/>
+                    <Form.Label>Opis</Form.Label>
+                    <Form.Control type="text" value={this.state.content} onChange={this.onChangeArticleContent} />
                 </Form.Group>
 
                 <Button variant="danger" size="lg" block="block" type="submit">
-                    Update Article
+                    Edytuj artykuł
                 </Button>
 
             </Form>

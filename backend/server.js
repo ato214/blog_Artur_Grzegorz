@@ -10,8 +10,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db, {
     useNewUrlParser: true
 }).then(() => {
-        console.log('Connected!')
-    },
+    console.log('Connected!')
+},
     error => {
         console.log('Error during connection attempt: ' + error)
     }
@@ -36,7 +36,7 @@ const server = app.listen(port, () => {
 
 app.use((err, req, res, next) => {
     console.error(err.message);
-    if(!err.statusCode) {
+    if (!err.statusCode) {
         err.statusCode = 500;
     }
     res.status(err.statusCode).send(err.message);
